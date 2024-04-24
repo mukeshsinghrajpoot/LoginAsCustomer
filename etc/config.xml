@@ -1,0 +1,16 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Store:etc/config.xsd">
+	<default>
+		<bluethink_admin_login_as_customer>
+			<general>
+				<loginenabledisable/>
+				<login_notification_customer_newtab/>
+				<login_notification_customer/>
+				<sender>general</sender>
+                <email_template>bluethink_admin_login_as_customer_general_email_template</email_template>
+                <select_option_bt_login>customer_grid,customer_view,orders_grid,orders_view,invoices_grid,invoices_view,shipments_grid,shipments_view,credit_memos_grid,credit_memos_view</select_option_bt_login>
+                <notify_email_subject>Customer Notification</notify_email_subject>
+			</general>
+		</bluethink_admin_login_as_customer>
+	</default>
+</config>

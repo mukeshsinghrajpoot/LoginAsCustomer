@@ -1,0 +1,19 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
+	<preference for="Bluethinkinc\LoginAsCustomer\Api\LoginAsCustomerRepositoryInterface" type="Bluethinkinc\LoginAsCustomer\Model\LoginAsCustomerRepository"/>
+	<preference for="Bluethinkinc\LoginAsCustomer\Api\Data\LoginAsCustomerInterface" type="Bluethinkinc\LoginAsCustomer\Model\LoginAsCustomer"/>
+	<preference for="Bluethinkinc\LoginAsCustomer\Api\Data\LoginAsCustomerSearchResultsInterface" type="Magento\Framework\Api\SearchResults"/>
+	<virtualType name="Bluethinkinc\LoginAsCustomer\Model\ResourceModel\LoginAsCustomer\Grid\Collection" type="Magento\Framework\View\Element\UiComponent\DataProvider\SearchResult">
+		<arguments>
+			<argument name="mainTable" xsi:type="string">bluethinkinc_loginascustomer</argument>
+			<argument name="resourceModel" xsi:type="string">Bluethinkinc\LoginAsCustomer\Model\ResourceModel\LoginAsCustomer\Collection</argument>
+		</arguments>
+	</virtualType>
+	<type name="Magento\Framework\View\Element\UiComponent\DataProvider\CollectionFactory">
+		<arguments>
+			<argument name="collections" xsi:type="array">
+				<item name="bluethinkinc_loginascustomer_loginascustomer_listing_data_source" xsi:type="string">Bluethinkinc\LoginAsCustomer\Model\ResourceModel\LoginAsCustomer\Grid\Collection</item>
+			</argument>
+		</arguments>
+	</type>
+</config>

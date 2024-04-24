@@ -1,0 +1,7 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+	<menu>
+		<add id="Bluethinkinc::top_level" title="Bluethinkinc" module="Bluethinkinc_LoginAsCustomer" sortOrder="9999" resource="Magento_Backend::content"/>
+		<add id="Bluethinkinc_LoginAsCustomer::bluethinkinc_loginascustomer_loginascustomer" title="Login As Customer Logs" module="Bluethinkinc_LoginAsCustomer" sortOrder="9999" resource="Magento_Backend::content" parent="Bluethinkinc::top_level" action="bluethinkinc_loginascustomer/loginascustomer/index"/>
+	</menu>
+</config>

@@ -1,0 +1,59 @@
+<?xml version="1.0" ?>
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
+	<system>
+		<tab id="bluethink" translate="label" sortOrder="10">
+			<label>BlueThink Inc</label>
+		</tab>
+		<section id="bluethink_admin_login_as_customer" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+			<label>Login As Customer</label>
+			<tab>bluethink</tab>
+			<resource>Bluethinkinc_LoginAsCustomer::config_bluethinkinc_loginascustomer</resource>
+			<group id="general" sortOrder="10" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+				<label>general</label>
+				<field id="enabled" type="select" sortOrder="1" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Login as Customer</label>
+					<comment>Select "Enable" to enable module.</comment>
+					<source_model>Magento\Config\Model\Config\Source\Enabledisable</source_model>
+				</field>
+				<field id="login_notification_customer" type="select" sortOrder="3" showInWebsite="1" showInStore="1" showInDefault="1" translate="label">
+					<label>Send Admin Login Notification to Customer</label>
+                    <comment>On click of button, opens up a sparate tab to login into the customer account.</comment>
+					<source_model>Magento\Config\Model\Config\Source\Yesno</source_model>
+					<depends>
+                        <field id="bluethink_admin_login_as_customer/general/enabled">1</field>
+                    </depends>
+				</field>
+				<field id="notify_email_subject" translate="label" type="text" sortOrder="4" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+                    <validate>required-entry</validate>
+                    <label>Email Subject</label>
+                    <comment>Enter Email Subject.</comment>
+                    <depends>
+                        <field id="bluethink_admin_login_as_customer/general/enabled">1</field>
+                    </depends>
+                </field>
+				<field id="sender" translate="label" type="select" sortOrder="5" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Email Sender</label>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Identity</source_model>
+                    <depends>
+                        <field id="bluethink_admin_login_as_customer/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="email_template" translate="Email Template" type="select" sortOrder="6" showInDefault="1" showInWebsite="0" showInStore="0" canRestore="1">
+                    <label>Email Template</label>
+                    <comment>Email template chosen based on theme fallback when "Default" option is selected.</comment>
+                    <source_model>Magento\Config\Model\Config\Source\Email\Template</source_model>
+                    <depends>
+                        <field id="bluethink_admin_login_as_customer/general/enabled">1</field>
+                    </depends>
+                </field>
+                <field id="select_option_bt_login" translate="Select Option show button layout" type="multiselect" sortOrder="6" showInDefault="1" showInWebsite="1" showInStore="1" canRestore="1">
+        		<label>Select Option show button layout</label>
+        		<source_model>Bluethinkinc\LoginAsCustomer\Model\Config\Source\ConfigOption</source_model>
+        		 <depends>
+                        <field id="bluethink_admin_login_as_customer/general/enabled">1</field>
+                    </depends>
+    			</field>
+			</group>
+		</section>
+	</system>
+</config>

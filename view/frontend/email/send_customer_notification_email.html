@@ -1,0 +1,20 @@
+<!--@vars {
+"var store.frontend_name":"Store Frontend Name",
+"var admin_name":"Admin Name",
+"var customer_name":"Customer Name",
+"var admin_email":"Admin Email",
+"var email_subject":"email Subject"
+} @-->
+<!--@subject {{var email_subject}} @-->
+{{template config_path="design/email/header_template"}}
+
+<table>
+    <tr class="email-intro">
+        <td>
+            <p>{{trans "Hi,"}} {{var customer_name}}</p>
+            <p>{{trans "This Email id "}}{{var admin_email}}{{trans " login as a customer in your account."}} </p>
+        </td>
+    </tr>    
+</table>
+
+{{template config_path="design/email/footer_template"}}
